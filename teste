@@ -1,0 +1,61 @@
+agenda = [['joao','81987043487','81123456789','81987654321','11111111111','11222222222','8130221234'],['pedro','11111111111','81987043487','87987647389','11333333333','8234567896','11222222222'],['antonio','11222222222','11111111111','81988255065','2134321234']]
+'''chamadas=[["joao",11111111111,81123456789,11222222222,8130221234,11111111111,11111111111,11222222222,81987654321]
+["pedro",81987043487,8130221234,8130221234,8130221234,81987043487,81987043487,81987043487,81987043487]
+["antonio",81988255065,2134321234,81988255065,8134323184,8130834316,11111111111,11111111111]]'''
+
+
+def numeros():
+  n = str(input("Digite o nome do suspeito: "))
+  print("Agenda do suspeito %s:"%n)
+  for i in range(len(agenda)):
+    if n in agenda[i]:
+      for j in range(2,len(agenda[i])):
+        print(agenda[i][j])
+
+def suspeicao():
+  try:
+    v=int(input("Informe a quantidade de chamadas desejadas: "))
+    for i in range(v):
+
+
+
+def valida_faixa_inteiro(pergunta, inicio, fim): #itens do menu principal 
+     while True:
+         try:
+               valor = int(input(pergunta))
+               if inicio <= valor <= fim:
+                   return(valor)
+         except ValueError:
+               print("Valor inválido, favor digitar entre %d e %d" % (inicio, fim))
+
+
+
+
+
+
+
+def menu_suspeitos():
+     print("          Menu")
+     print("""
+   1 - Ver agenda de um suspeito
+   2 - Listar agenda apenas com suspeitos incluídos
+   3 - Visualizar reciprocidades
+   4 - Visualizar contatos com alto nivel de suspeição
+   5 - Sair
+
+""")
+     '''print("\nSuspeitos na agenda: %d\n" % len(agenda))'''
+     return valida_faixa_inteiro("Escolha uma opção: ",1,5)
+
+while True:
+     opção = menu_suspeitos()
+     if opção == 5:
+         break
+     elif opção == 1:
+         numeros()
+     elif opção == 2:
+         altera()
+     elif opção == 3:
+         apaga()
+     elif opção == 4:
+         lista()
